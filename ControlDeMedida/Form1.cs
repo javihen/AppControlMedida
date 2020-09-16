@@ -31,6 +31,7 @@ namespace ControlDeMedida
             pies = plg / 12;
             yarda = pies / 3;
             //mostrar los resultados en listbox
+            //adicionamos a la lista de listBox las siguientes lineas 
             lstResultado.Items.Add("** RESUMENES DE CONVERSIONES **");
             lstResultado.Items.Add("MEDIDAS EN METROS: "+mts.ToString("0.00"));
             lstResultado.Items.Add(" ---------------------------------------------");
@@ -43,14 +44,18 @@ namespace ControlDeMedida
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            //Limpiamos los controles usados
             txtMetros.Clear();
             lstResultado.Items.Clear();
+            //POsicionamos el puntero en el cuadro de texto txtMetros
             txtMetros.Focus();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            // en la variable r de tipo DialogResult guardaremos o asignaremos el resultado de la pregunta YES o NO 
             DialogResult r = MessageBox.Show("Estas seguro de cerrar?", "medidas", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            //Si (IF) es verdadero (presionamos Yes o SI) en el mensaje entonces cerramos el formulario sino (presionamos NO)  no hacemos nada.
             if (r == DialogResult.Yes)
                 this.Close();
         }
